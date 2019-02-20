@@ -40,7 +40,7 @@ module powerbi.extensibility.visual {
 
             this.table = jQuery('<table>');
             this.table.appendTo(this.target);
-            console.log(this.table);
+
             try {
                 this.table.igGrid({
                     dataSource: [
@@ -49,7 +49,6 @@ module powerbi.extensibility.visual {
                         { Label: 3, Value: 300 }
                     ]
                 });
-                console.log(this.table);
             } catch (err) {
                 console.log(err);
             }
