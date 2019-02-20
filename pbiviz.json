@@ -18,6 +18,12 @@
     "icon": "assets/icon.png"
   },
   "externalJS": [
+    "node_modules/jquery/dist/jquery.js",
+    "src/jquery.adapter.js",
+    "vendor/jquery-ui-1.12.1/jquery-ui.js",
+    "vendor/ignite-ui/js/infragistics.core.js",
+    "vendor/ignite-ui/js/infragistics.lob.js",
+    "src/infragistics.adapter.js",
     "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js"
   ],
   "style": "style/visual.less",

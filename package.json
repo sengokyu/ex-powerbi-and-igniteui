@@ -1,6 +1,13 @@
 {
   "name": "visual",
   "dependencies": {
+    "ignite-ui": "^18.2.50",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
     "powerbi-visuals-utils-dataviewutils": "1.2.0"
+  },
+  "devDependencies": {
+    "@types/ignite-ui": "^18.2.0",
+    "@types/jquery": "^3.3.29"
   }
 }
