@@ -29,6 +29,7 @@ module powerbi.extensibility.visual {
 
     export class Visual implements IVisual {
         private host: IVisualHost;
+        private submit: JQuery<HTMLButtonElement>;
         private target: JQuery<HTMLElement>;
         private table: JQuery<HTMLElement>; // ignite-ui grid
         private settings: VisualSettings;
@@ -38,17 +39,45 @@ module powerbi.extensibility.visual {
             this.host = options.host;
             this.target = jQuery(options.element);
 
+            this.submit = jQuery('<button>') as JQuery<HTMLButtonElement>;
+            this.submit.text('送信');
+            this.submit.click(() => {
+                console.log('send!')
+            });
+
             this.table = jQuery('<table>');
-            this.table.appendTo(this.target);
+
+            this.target.append(this.table);
+            this.target.append(this.submit);
+
+            const params: IgGrid = {
+                dataSource: [
+                    { Label: 1, Value: 100 },
+                    { Label: 2, Value: 200 },
+                    { Label: 3, Value: 300 }
+                ],
+                features: [
+                    {
+                        name: 'Responsive',
+                        enableVerticalRendering: false
+                    },
+                    {
+                        name: 'RowSelectors',
+                        enableCheckBoxes: true,
+                        enableRowNumbering: false,
+                        enableSelectAllForPaging: true
+                    },
+                    {
+                        name: 'Selection',
+                        mode: 'row',
+                        multipleSelection: true
+                    }
+                ]
+            }
+
 
             try {
-                this.table.igGrid({
-                    dataSource: [
-                        { Label: 1, Value: 100 },
-                        { Label: 2, Value: 200 },
-                        { Label: 3, Value: 300 }
-                    ]
-                });
+                this.table.igGrid(params);
             } catch (err) {
                 console.log(err);
             }
