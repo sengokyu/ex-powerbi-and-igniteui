@@ -24,6 +24,7 @@
     "vendor/ignite-ui/js/infragistics.core.js",
     "vendor/ignite-ui/js/infragistics.lob.js",
     "src/infragistics.adapter.js",
+    "node_modules/azure-storage/lib/azure-storage.js",
     "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js"
   ],
   "style": "style/visual.less",

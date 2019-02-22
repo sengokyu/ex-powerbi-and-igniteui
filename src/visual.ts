@@ -42,7 +42,23 @@ module powerbi.extensibility.visual {
             this.submit = jQuery('<button>') as JQuery<HTMLButtonElement>;
             this.submit.text('送信');
             this.submit.click(() => {
-                console.log('send!')
+                const entGen = TableUtilities.entityGenerator;
+                const account = 'demopbi';
+                const key =
+                  'Cej1y2Ba4//mjkPCcuQW6WPpNGEtFD+txBOsUq2J/QwPh6dodWp1iT3fJoqm3ggZNj9Rqp+IraT4IFLJve0y/A==';
+                const table = 'demopbi';
+                const tablesvc = createTableService(account, key);
+                const task = {
+                    PartitionKey: 'p1',
+                    RowKey: entGen.String(Date.now.toString()),
+                    Value: Date.now
+                };
+                
+                tablesvc.insertEntity(table, task, (error, result, response) => {
+                  if (error) {
+                    console.log(error);
+                  }
+                });
             });
 
             this.table = jQuery('<table>');

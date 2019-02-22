@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "AMD",
     "moduleResolution": "classic",
-    "target": "ES5",
-    "sourceMap": true,
-    "typeRoots": ["node_modules/@types"]
+    "target": "ES6",
+    "sourceMap": true
   },
   "files": [
     ".api/v2.3.0/PowerBI-visuals.d.ts",
     "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.d.ts",
+    "node_modules/@types/node/index.d.ts",
+    "node_modules/azure-storage/typings/azure-storage/azure-storage.d.ts",
     "src/settings.ts",
     "src/visual.ts"
   ]
