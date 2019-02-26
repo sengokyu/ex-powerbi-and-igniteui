@@ -40,7 +40,7 @@ module powerbi.extensibility.visual {
             this.target = jQuery(options.element);
 
             this.submit = jQuery('<button>') as JQuery<HTMLButtonElement>;
-            this.submit.text('送信');
+            this.submit.text('Send');
             this.submit.click(() => {
                 console.log('send!')
             });
